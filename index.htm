@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Monitor</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .normal { color: green; }
+        .anomaly { color: red; }
+    </style>
+</head>
+<body>
+    <h2>Real-Time Health Status</h2>
+    <p><strong>Time:</strong> {{ data.timestamp }}</p>
+    <p><strong>Heart Rate:</strong> {{ data.heart_rate }} bpm</p>
+    <p><strong>Blood Oxygen:</strong> {{ data.blood_oxygen }}%</p>
+    <p><strong>Activity Level:</strong> {{ data.activity_level }}</p>
+    <p><strong>Status:</strong> <span class="{{ 'anomaly' if data.status == 'Anomaly' else 'normal' }}">{{ data.status }}</span></p>
+</body>
+</html>
